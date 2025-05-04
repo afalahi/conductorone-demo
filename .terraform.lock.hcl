@@ -1,0 +1,25 @@
+# This file is maintained automatically by "terraform init".
+# Manual edits may be lost in future updates.
+
+provider "registry.terraform.io/conductorone/conductorone" {
+  version     = "1.0.4"
+  constraints = "1.0.4"
+  hashes = [
+    "h1:aUrp2GNI5u3bn5IKxz1CypzsrNhZj4VkM4mOAql3O+U=",
+    "zh:150658672278b487aeb324b6745240f8bc968ee33644746c312495c840edcf54",
+    "zh:15f66756453b9186caec5c28cf7aea767dd059b47d0b62cfe819fc76b25139d2",
+    "zh:280679e4195b42416795f1f5d6ddde9626afbcd08becc4aeebe6dda18563a366",
+    "zh:74217810b56d26dfdbd592d1e3ab401dcc49e57dd55c522f70107ca825fb8ad2",
+    "zh:825f50e3358660bfdfa6416d9d135e83ce5886762d193495ee138dc7c0f9e51d",
+    "zh:8879d7b39fc2dc888f400de8d54255e111e849ae840e08d123d13937263191e6",
+    "zh:890df766e9b839623b1f0437355032a3c006226a6c200cd911e15ee1a9014e9f",
+    "zh:8a2504d3ab1471f860cb2a1607e580b425a60c50d94f7fb1410868ca0839a713",
+    "zh:8e70e9ce5cf49e980fb0c2c57ed6ac4c41895acac2d7c60084b39f7618faf979",
+    "zh:975037fbe12577cc84084237ba7431bd1f2509d31103f7df4b9f0212a110f475",
+    "zh:a208ba00bcc02255711b6d34e6527e89ad4f50a422e9da6d7451e6c1130f41b8",
+    "zh:a5ed67e4a0e4294d69434337b0a3fc4f9f4fb38e3300da96448e4404cb327e50",
+    "zh:be163e82e15c5bc005314e37d04d9a5e05b55b95d8f103c8686643aa04b323ac",
+    "zh:c56e8e959b55dd29a63d1286c96dc4da7cd2680cc48ff7409057c1512513bd87",
+    "zh:ebe146504ef3d60e8ece326cc35c3762b82dface1723a9697b40394df9d856fb",
+  ]
+}
