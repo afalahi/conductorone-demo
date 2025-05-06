@@ -37,3 +37,8 @@ variable "automation_description" {
   description = "Description for the automation"
   type        = string
 }
+variable "group_expression" {
+  description = "Expression to filter the group"
+  type        = string
+
+}

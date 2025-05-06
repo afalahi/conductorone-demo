@@ -31,7 +31,7 @@ resource "conductorone_app_entitlement_automation" "automation" {
   app_id             = var.app_id
   app_entitlement_id = conductorone_custom_app_entitlement.member.id
   app_entitlement_automation_rule_cel = {
-    expression = "((has(subject.profile.department) && subject.profile.department=='engineering'))"
+    expression = var.group_expression
   }
   display_name = var.automation_name
   description  = var.automation_description
@@ -62,4 +62,16 @@ resource "conductorone_access_profile_visibility_bindings" "request_group" {
     }
   ]
   catalog_id = conductorone_access_profile.profile.id
+}
+resource "conductorone_bundle_automation" "profile_enrollment" {
+  request_catalog_id = conductorone_access_profile.profile.id
+  bundle_automation_rule_entitlement = {
+    entitlement_refs = [
+      {
+        app_id = var.app_id
+        id     = conductorone_custom_app_entitlement.member.id
+      }
+    ]
+  }
+  enabled = true
 }
