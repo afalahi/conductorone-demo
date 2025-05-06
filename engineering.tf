@@ -8,4 +8,5 @@ module "engineering_access" {
   automation_name            = "Engineering Automation"
   automation_description     = "Automation for engineering group"
   group_description          = "Group for engineering team"
+  group_expression           = "((has(subject.profile.manager) && subject.profile.manager == 'nick.fury@governator.io'))"
 }
