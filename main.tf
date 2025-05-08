@@ -37,7 +37,7 @@ resource "conductorone_access_profile" "engineering_profile" {
   display_name   = "TF Update 2 - Engineering Team"
   description    = "Updated name for the access profile"
   published      = false
-  request_bundle = false
+  request_bundle = false # Make profile requestable
 }
 
 
