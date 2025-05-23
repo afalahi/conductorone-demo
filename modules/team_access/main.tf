@@ -2,7 +2,7 @@ terraform {
   required_providers {
     conductorone = {
       source  = "ConductorOne/conductorone"
-      version = "1.0.4"
+      version = "1.0.5"
     }
   }
 }
@@ -21,13 +21,13 @@ resource "conductorone_custom_app_entitlement" "member" {
   display_name         = "Member"
   slug                 = "member"
 }
-resource "conductorone_custom_app_entitlement" "excluded" {
-  app_id               = var.app_id
-  app_resource_id      = conductorone_app_resource.group.id
-  app_resource_type_id = var.resource_type_id
-  display_name         = "Excluded from Rule"
-  slug                 = "excluded from rule"
-}
+# resource "conductorone_custom_app_entitlement" "excluded" {
+#   app_id               = var.app_id
+#   app_resource_id      = conductorone_app_resource.group.id
+#   app_resource_type_id = var.resource_type_id
+#   display_name         = "Excluded from Rule"
+#   slug                 = "excluded from rule"
+# }
 resource "conductorone_app_entitlement_automation" "automation" {
   app_id             = var.app_id
   app_entitlement_id = conductorone_custom_app_entitlement.member.id
@@ -48,10 +48,10 @@ resource "conductorone_app_entitlement_automation" "automation" {
 resource "conductorone_access_profile" "profile" {
   description                       = var.access_profile_description
   display_name                      = var.access_profile_name
-  enrollment_behavior               = "REQUEST_CATALOG_ENROLLMENT_BEHAVIOR_UNSPECIFIED"
+  enrollment_behavior               = "REQUEST_CATALOG_ENROLLMENT_BEHAVIOR_BYPASS_ENTITLEMENT_REQUEST_POLICY"
   published                         = true
   request_bundle                    = false
-  unenrollment_behavior             = "REQUEST_CATALOG_UNENROLLMENT_BEHAVIOR_UNSPECIFIED"
+  unenrollment_behavior             = "REQUEST_CATALOG_UNENROLLMENT_BEHAVIOR_LEAVE_ACCESS_AS_IS"
   unenrollment_entitlement_behavior = "REQUEST_CATALOG_UNENROLLMENT_ENTITLEMENT_BEHAVIOR_BYPASS"
   visible_to_everyone               = false
 }
